@@ -5,7 +5,8 @@ export interface ProjectItem {
   technology: string[];
   techString: string;
   actionLabel: string;
-  type: 'grade-calc' | 'voting-calc' | 'genai-experiments';
+  type: 'vote-eligibility-python' | 'skillpath-ai' | 'n8n-ai-news';
+  externalUrl?: string;
 }
 
 export interface SkillCategory {

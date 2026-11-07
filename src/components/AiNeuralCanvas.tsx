@@ -104,7 +104,7 @@ export const AiNeuralCanvas: React.FC = () => {
           ctx.beginPath();
           ctx.moveTo(nodeA.x, nodeA.y);
           ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = `rgba(56, 189, 248, ${(1 - distMouse / mouse.radius) * 0.35})`;
+          ctx.strokeStyle = `rgba(255, 255, 255, ${(1 - distMouse / mouse.radius) * 0.4})`;
           ctx.lineWidth = 1;
           ctx.stroke();
         } else {
@@ -120,12 +120,12 @@ export const AiNeuralCanvas: React.FC = () => {
           const maxDist = 120;
 
           if (dist < maxDist) {
-            const alpha = (1 - dist / maxDist) * 0.22;
+            const alpha = (1 - dist / maxDist) * 0.2;
             ctx.beginPath();
             ctx.moveTo(nodeA.x, nodeA.y);
             ctx.lineTo(nodeB.x, nodeB.y);
-            ctx.strokeStyle = `rgba(96, 165, 250, ${alpha})`;
-            ctx.lineWidth = 0.9;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
+            ctx.lineWidth = 0.8;
             ctx.stroke();
           }
         }
@@ -133,9 +133,9 @@ export const AiNeuralCanvas: React.FC = () => {
         // Draw node
         ctx.beginPath();
         ctx.arc(nodeA.x, nodeA.y, nodeA.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(147, 197, 253, 0.75)';
-        ctx.shadowBlur = 6;
-        ctx.shadowColor = 'rgba(56, 189, 248, 0.5)';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+        ctx.shadowBlur = 4;
+        ctx.shadowColor = 'rgba(255, 255, 255, 0.4)';
         ctx.fill();
         ctx.shadowBlur = 0;
       }

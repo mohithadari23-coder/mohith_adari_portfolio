@@ -4,10 +4,12 @@ import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
+import { Achievements } from './components/Achievements';
 import { GitHubSection } from './components/GitHubSection';
 import { Timeline } from './components/Timeline';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { FuturisticBackground3D } from './components/FuturisticBackground3D';
 import { ProjectModal } from './components/ProjectModals';
 import { ProjectItem } from './types';
 
@@ -17,7 +19,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'github-section', 'journey', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'achievements', 'github-section', 'journey', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -43,7 +45,10 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#070b14] text-slate-100 flex flex-col selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="relative min-h-screen bg-[#000000] text-[#BDBDBD] flex flex-col selection:bg-white selection:text-black overflow-x-hidden">
+      {/* Full-Site Ambient 3D Futuristic Horizon & Matrix Grid */}
+      <FuturisticBackground3D />
+
       {/* Sticky Navigation Bar */}
       <Navbar activeSection={activeSection} />
 
@@ -61,13 +66,16 @@ export default function App() {
         {/* Section 7: Projects */}
         <Projects onSelectProject={(project) => setSelectedProject(project)} />
 
-        {/* Section 8: Explore My Code (GitHub) */}
+        {/* Section 8: Achievements */}
+        <Achievements />
+
+        {/* Section 9: Explore My Code (GitHub) */}
         <GitHubSection />
 
-        {/* Section 9: Learning Journey */}
+        {/* Section 10: Learning Journey */}
         <Timeline />
 
-        {/* Section 10: Contact */}
+        {/* Section 11: Contact */}
         <Contact />
       </main>
 
